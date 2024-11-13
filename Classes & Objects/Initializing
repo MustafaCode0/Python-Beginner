@@ -1,0 +1,36 @@
+class Player:
+    # Initialize variables at the top
+    teamcolor = ""
+    __points = 0
+
+    # __doc__ and __init__ are Python built in methods the doc-method is used to give 
+    # info to developers abuout functions of the class and the init-doc is used to initialize
+    # important variables which will be used for the whole class   
+    def __doc__(self):
+        """Player-class: stores data on team colors and points."""
+
+    def __init__(self):
+        self.teamcolor = input("What color do I get?: ")
+
+    def tellscore(self):
+        print("I am",self.teamcolor,", we have",self.__points,"points!")
+        pass
+
+    def goal(self):
+        self.__points += 1
+        pass
+def main():
+    # Making Multiple handler for the same class let's us use the classes same functions
+    # At the same time and have different outcomes 
+    team1 = Player()
+    team2 = Player()
+
+    team1.goal()
+    team1.goal()
+    team2.goal()
+
+    team1.tellscore()
+    team2.tellscore()
+
+if __name__ == "__main__":
+    main()
