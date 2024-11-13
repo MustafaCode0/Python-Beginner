@@ -1,0 +1,14 @@
+print("Calculator")
+
+#asking & storing user input
+first_num = input("Give the first number: ")
+second_num = input("Give the second number: ")
+
+#declaring the input to be integer
+first_num = int(first_num)
+second_num = int(second_num)
+
+#making the addition & printing result to user
+result = first_num + second_num
+
+print("The result is :" , result)
