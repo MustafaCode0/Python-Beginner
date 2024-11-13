@@ -1,0 +1,32 @@
+# _*_ coding: <cp1252> _*_
+
+#tulostetaan tiedot ja säilytään käyttäjän syöttö
+print("Calculator")
+num_one = input("Give the first number: ")
+num_two = input("Give the second number: ")
+print(" (1) +\n (2) -\n (3) *\n (4) /")
+cal = input("Please select something (1-4): ")
+
+#muutetaan käytäjän syöttön integeriksi
+num_one = int(num_one)
+num_two = int(num_two)
+
+
+if cal == "1": #tarkistan jos käyttäjä valinnut 1
+    result = num_one + num_two #numerot yhteensä
+    print("The result is:", result)
+    
+elif cal == "2": #tarkistan jos käyttäjä valinnut 2
+    result = num_one - num_two #vähennys laskenta
+    print("The result is:", result)
+    
+elif cal == "3": #tarkistan jos käyttäjä valinnut 3
+    result = num_one * num_two #kerta laskenta
+    print("The result is:", result)
+    
+elif cal == "4": #tarkistan jos käyttäjä valinnut 4
+    result = num_one / num_two #jako laskenta
+    print("The result is:", result)
+
+else:
+    print("Selection was not correct.")
