@@ -1,0 +1,23 @@
+class Player:
+    teamcolor = "Blue"
+    # The __ at the beginning of the variable name makes it private
+    # So it can be used only in this class
+    __points = 0
+
+    # Make Method the same way we make functions except every class method has (self) Parameter
+    # Which indicates that it's for this class and in this class
+    def tellscore(self):
+        print("I am",self.teamcolor,", we have",self.__points,"points!")
+        pass
+    
+    def goal(self):
+        self.__points += 1
+        pass
+
+def main():
+    play = Player()
+    play.goal()
+    play.tellscore()
+
+if __name__ == "__main__":
+    main()
