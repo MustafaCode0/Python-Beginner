@@ -1,0 +1,57 @@
+class selections:
+
+    shop_list=[]
+    item=""
+
+    def adding(self):
+        self.item = input("What will be added?: ")
+        self.shop_list.append(self.item)
+        pass
+
+    def remove(self):
+        print("There are",len(self.shop_list),"items in the list.")
+
+        try:
+            r = int(input("Which item is deleted?: "))
+            if self.shop_list[r]:
+                pass
+        except Exception:
+            print("Incorrect selection.")
+        except IndexError:
+            print("Incorrect selection.")
+        else:
+            self.shop_list.pop(r)
+        pass
+
+    def quit(self):
+        print("The following items remain in the list: ")
+        for i in self.shop_list:
+            print(i)
+        pass
+
+def main():
+
+    handler = selections()
+
+    while True:
+        print("Would you like to")
+        print("(1)Add or")
+        print("(2)Remove items or")
+
+        try:
+            usr_select = int(input("(3)Quit?: "))
+            if usr_select not in (1, 2, 3):
+                raise ValueError("Incorrect selection.")
+        except Exception:
+            print("Incorrect selection.")
+        else:
+            if usr_select == 1:
+                handler.adding()
+            elif usr_select == 2:
+                handler.remove()
+            else:
+                handler.quit()
+                quit()
+
+if __name__ == "__main__":
+    main()
