@@ -1,0 +1,10 @@
+# List is created by []
+list= ["Blue","Red","Yellow","Green"]
+
+print("The first item in the list is:", list[0])
+
+print("The entire list printed one item a time:")
+
+# Looping through each item in the list
+for i in list:
+    print(i)
