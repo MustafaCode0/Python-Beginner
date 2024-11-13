@@ -1,2 +1,0 @@
-x = "Our variable has a value which is string-type content"
-print(x, " Isn't that nice", sep=".", end="?")
