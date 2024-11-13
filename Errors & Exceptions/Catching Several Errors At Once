@@ -1,0 +1,24 @@
+# _*_ coding: cp1252 _*_
+
+def number(file_name):
+    try:
+        file = open(file_name, "r")
+        content = file.read()
+        content = int(content)
+        result = float(1000/content)
+        file.close()
+    except FileNotFoundError:
+        print("There seems to be no file with that name.")
+    except (TypeError, ValueError):
+        print("The file contents were unsuitable.")
+    except Exception:
+        print("There was a problem with the program.")
+    else:
+        print("The result was", result)
+
+def main():
+    file_name = input("Give the file name: ")
+    number(file_name)
+
+if __name__ == "__main__":
+    main()
