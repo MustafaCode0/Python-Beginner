@@ -1,0 +1,17 @@
+# _*_ coding: cp1252 _*_
+
+def number():
+    # by using try & except the program loops until user gives the right type of input
+    # which in this case is integer
+    try:
+        usr_num = int(input("Give a number: "))
+        print("The input was suitable!")
+    except Exception:
+        print("The input was malformed.")
+
+
+def main():
+    number()
+
+if __name__ == "__main__":
+    main()
