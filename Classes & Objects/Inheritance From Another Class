@@ -1,0 +1,30 @@
+class Customer:
+    name = "John Johnsson"
+    total = 1000
+    paymenttype = "Masterexpress"
+    number = "1234-5678-9012345"
+
+    def printout(self):
+        print("Name: ", self.name)
+        print("Total: ", self.total)
+        print("Payment type: ", self.paymenttype)
+        print("Card/Bill number: ", self.number)
+
+# Creating different class and Inherating methods & attributes from (Customer) class
+class ManageCustomer(Customer):
+    def addbill(self):
+        self.total += 50
+        pass
+    
+    def payment(self):
+        self.total -= 100
+        pass
+
+def main():
+    # Making handler for the inherated class, we can access the main classes methods and attributes
+    person = ManageCustomer()
+    person.name = "Homer Griffin"
+    person.addbill()
+    person.payment()
+    person.payment()
+    person.printout()
