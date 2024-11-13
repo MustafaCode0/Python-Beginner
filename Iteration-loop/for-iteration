@@ -1,0 +1,7 @@
+userInt = int(input("Give a number: "))
+total = 0
+
+for i in range(0, userInt):
+    total = i + total
+
+print("The sum was: ", total)
