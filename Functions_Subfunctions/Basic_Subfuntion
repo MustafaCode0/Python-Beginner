@@ -1,0 +1,13 @@
+# hello Subfunction
+def hello():
+    print("Hello there!")
+
+# Main function
+def main():
+    print("Lets call the subfunction:")
+    hello()
+    print("Quitting.")
+
+# telling the interpreter that main is the main function
+if __name__ == "__main__":
+    main()
