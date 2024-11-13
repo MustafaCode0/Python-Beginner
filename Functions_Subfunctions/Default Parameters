@@ -1,0 +1,18 @@
+# giving value to subfunction's parameters where it's decleared
+# we make it its default value
+def tester(givenstring = "Too short"):
+
+    while True:
+        usr_input = input("Write something (quit ends): ")
+        if len(usr_input) > 10:
+            print(usr_input)
+        elif usr_input == "quit":
+            break
+        else:
+            print(givenstring)
+
+def main():
+    tester()
+
+if __name__ == "__main__":
+    main()
