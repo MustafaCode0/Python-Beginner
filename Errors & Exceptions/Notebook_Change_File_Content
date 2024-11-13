@@ -1,0 +1,60 @@
+import time
+
+def selection(a):
+    global name
+    if a == 1:
+        file = open(name, "r")
+        content = file.read()
+        print(content)
+        file.close()
+        return
+    elif a == 2:
+        file = open(name, "a")
+        string = input("Write a new note: ")
+        file.write(string+ ":::"+ time.strftime("%X %x"))
+        file.close()
+        return
+    elif a == 3:
+        file = open(name, "w")
+        file.close()
+        return
+    elif a == 4:
+        usr = input("Give the name of the new file: ")
+        name = usr
+        try:
+            f = open(usr)
+            content = f.read()
+            f.close()
+        except IOError:
+            print("No notebook with that name detected, created one.")
+            file = open(name, "w")
+            file.close()
+        else:
+            file = open(name, "w")
+            file.write(content)
+            file.close()
+    elif a == 5:
+        return 0
+
+def main():
+    global name
+    name ="notebook.txt"
+    while True:
+        try:
+            file = open(name, "r")
+            file.close()
+        except FileNotFoundError:
+            file = open(name, "w")
+            print("No default notebook was found, created one.")
+            file.close()
+
+        print("Now using file", name)
+        print("(1) Read the notebook", "(2) Add note", "(3) Empty the notebook", "(4) Change the notebook", "(5) Quit", sep="\n")
+        choice = int(input("Please select one: "))
+        selected = selection(choice)
+        if selected == 0:
+            print("Notebook shutting down, thank you.")
+            quit()
+
+if __name__ == "__main__":
+    main()
