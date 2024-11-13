@@ -1,0 +1,7 @@
+# Defining value "..." to variable x
+x = "Our variable has a value which is string-type content"
+
+# printing x value with added string " "
+# used sep built in function to seperate them with "." 
+# used end function to end the str with "?"
+print(x, " Isn't that nice", sep=".", end="?")
