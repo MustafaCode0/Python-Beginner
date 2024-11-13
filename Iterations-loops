@@ -1,0 +1,10 @@
+currentLap = 0
+maxLap = 4
+
+# loop runs as long as currentLap is smaller than or equal to maxLap 
+while currentLap <= maxLap:
+    print("This is lap ", currentLap)
+
+    # by increasing currentLap with each time the code runs
+    # we make sure not make infinite loop 
+    currentLap += 1
