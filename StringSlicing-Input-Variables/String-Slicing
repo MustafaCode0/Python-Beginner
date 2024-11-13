@@ -1,0 +1,14 @@
+#Making the main variable
+text = "desserts"
+
+#First slicing to print out 4 characters of text
+first_char = text[0:4]
+print("The first 4 characters were:" , first_char)
+
+#Second slicing to print out the last 4 characters of text using minus
+second_char = text[-4:]
+print("The last 4 characters were:" , second_char)
+
+#Third slicing to print out the text string backwards
+third_char = text[::-1]
+print("The string backwards was:" , third_char)
