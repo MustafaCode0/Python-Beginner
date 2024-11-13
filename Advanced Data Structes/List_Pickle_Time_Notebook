@@ -1,0 +1,79 @@
+import os.path
+import pickle
+import time
+
+class notebook:
+    def reading(self):
+        file_size = os.path.getsize("notebook.dat")
+        if file_size == 0:
+            pass
+        else:
+            file = open("notebook.dat", "rb")
+            context = pickle.load(file)
+            print(*context)
+            file.close()
+    def adding(self):
+        file_size = os.path.getsize("notebook.dat")
+        usr_list = [input("Write a new note: ")+":::"+time.strftime("%X%x")]
+        if file_size == 0:
+            file = open("notebook.dat", "wb")
+            pickle.dump(usr_list,file)
+            file.close()
+        else :
+            file = open("notebook.dat", "rb")
+            old = pickle.load(file)
+            file.close()
+            file = open("notebook.dat", "wb")
+            new_list = old + usr_list
+            pickle.dump(new_list, file)
+            file.close()
+    def editing(self):
+        file = open("notebook.dat", "rb")
+        context = pickle.load(file)
+        file.close()
+        print("The list has",len(context),"notes.")
+        list_index = int(input("Which of them will be changed?: "))
+        print(*context.pop(list_index))
+        new_note = input("Give the new note: ")
+        context.insert(list_index, new_note+":::"+time.strftime("%X%x"))
+        file = open("notebook.dat", "wb")
+        pickle.dump(context, file)
+        file.close()
+    def deleting(self):
+        file = open("notebook.dat", "rb")
+        context = pickle.load(file)
+        file.close()
+        print("The list has",len(context),"notes.")
+        usr_index = int(input("Which of them will be deleted?: "))
+        print("Deleted note", *context[usr_index-1])
+        context.pop(usr_index-1)
+        file = open("notebook.dat", "wb")
+        pickle.dump(context, file)
+        file.close()
+    def quitting(self):
+        print("Notebook shutting down, thank you.")
+def main():
+    handler = notebook()
+    try:
+        file = open("notebook.dat", "rb")
+        file.close()
+    except FileNotFoundError:
+        print("No default notebook was found, created one.")
+        file = open("notebook.dat", "wb")
+        file.close()
+    while True:
+        print("(1) Read the notebook\n(2) Add note\n(3) Edit a note\n(4) Delete a note\n(5) Save and quit\n")
+        usr_select = int(input("Please select one: "))
+        if usr_select == 1:
+            handler.reading()
+        elif usr_select == 2:
+            handler.adding()
+        elif usr_select == 3:
+            handler.editing()
+        elif usr_select == 4:
+            handler.deleting()
+        elif usr_select == 5:
+            handler.quitting()
+            quit()
+if __name__ == "__main__":
+    main()
