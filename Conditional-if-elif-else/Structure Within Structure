@@ -1,0 +1,16 @@
+correct_username = "John"
+correct_password = "ABC123"
+
+username = input("Give name: ")
+
+# Checking if username matches
+if username == correct_username:
+    password = input("Give password: ")
+
+    # checking if password matches
+    if password == correct_password:
+        print("Both inputs are correct!")
+    else:
+        print("The password is incorrect.")
+else:
+    print("The given name is wrong.")
