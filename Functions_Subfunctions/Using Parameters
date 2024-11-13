@@ -1,0 +1,11 @@
+# subfunction receives data through (num) parameter which is decleared next to its name
+def powerOfTwo(num):
+    print("The result is", (2**num))
+
+def main():
+    usr_num = int(input("Give a number: "))
+    # calling/running (powerOfTwo) subfunction and sending user int with it
+    powerOfTwo(usr_num)
+
+if __name__ == "__main__":
+    main()
