@@ -1,0 +1,11 @@
+file = open("strings.txt", "r")
+content = file.readlines()
+
+for i in content:
+    stripedLine = i.strip() # will remove empty spaces
+    if stripedLine.isalnum(): # checking if the row is only letters and numbers
+        print(stripedLine,"was ok.")
+    else:
+        print(stripedLine, "was invalid.")
+
+file.close()
