@@ -1,0 +1,9 @@
+# we open existing file (facts.txt) with read-only ("r")
+file = open("facts.txt", "r") 
+
+# reading what is in it with .read() function
+readContent = file.read()
+
+print("Following was read from the file: ", readContent) 
+# always remember to close the file when done.
+file.close() 
