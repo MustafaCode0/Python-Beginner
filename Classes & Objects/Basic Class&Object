@@ -1,0 +1,16 @@
+# Class name first letters always capital
+class Player:
+    # making two variables in the class
+    teamcolor, points = "", ""
+
+def main():
+    # Making handler/Object (play) for Player() class
+    play = Player()
+    # Giving values to the class's variables 
+    play.teamcolor="Blue"
+    play.points = 300
+
+    print("The",play.teamcolor,"contender has",play.points,"points!")
+
+if __name__ == "__main__":
+    main()
