@@ -1,0 +1,13 @@
+# setting values
+x = "1000"
+y = "24"
+
+# converting variables to integer
+x = int(x)
+y = int(y)
+
+#calculating the sum and exponent to result variable
+result = x + y + 15
+expo_result = result ** 2
+
+print("The final results of the calculation was:" , expo_result)
