@@ -1,0 +1,24 @@
+#kysytään käyttäjältä numerot
+num_one = input("Give a number: ")
+num_two = input("Give another number: ")
+
+#muutetaan numerot stringista integeriksi 
+#että voidaan jaka
+num_one = int(num_one)
+num_two = int(num_two)
+
+#jako kahdella
+num_one = num_one / 2
+num_two = num_two / 2
+
+#ensimmäinen tarkistus jos molemmat ovat parillisia
+if num_one.is_integer() and num_two.is_integer():
+    print("Both numbers are even.")
+
+#toinen tarkistus jos yksi niistä on parillinen ja toista ei 
+elif not num_one.is_integer() and num_two.is_integer() or not num_two.is_integer() and num_one.is_integer():
+    print("One of the numbers is even.")
+
+#kolmas tarkistus jos molemmat ovat parittomia
+elif not num_one.is_integer() and not num_two.is_integer():
+    print("Both numbers are odd.")
