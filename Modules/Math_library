@@ -1,0 +1,58 @@
+import math
+
+num1=0
+num2=0
+def selection(selected, n1, n2):
+    global num1
+    global num2
+    if selected == "1":
+        total = n1 + n2
+        return total
+    elif selected == "2":
+        total = n1 - n2
+        return total
+    elif selected == "3":
+        total = n1 * n2
+        return total
+    elif selected == "4":
+        total = n1 / n2
+        return total
+    elif selected == "5":
+        total = math.sin(n1/n2)
+        return total
+    elif selected == "6":
+        total = math.cos(n1/n2)
+        return total
+    elif selected == "7":
+        num1 = int(input("Give the first number: "))
+        num2 = int(input("Give the second number: "))
+        return 9
+    elif selected == "8":
+        return 0
+
+
+def main():
+    global num1
+    global num2
+    print("Calculator")
+    num1 = int(input("Give the first number: "))
+    num2 = int(input("Give the second number: "))
+
+
+    while True:
+        print("(1) +\n(2) -\n(3) * \n(4) /\n(5)sin(number1/number2)\n(6)cos(number1/number2)\n(7)Change numbers\n(8)Quit")
+        print("Current numbers: ", num1, num2)
+        #the verification of the program made me type 1-6 instead of 1-8
+        #it also says that it's not case-sensitive, but actually it is case-sensitive
+        usr_select = input("Please select something (1-6): ")
+
+        result = selection(usr_select, num1, num2)
+
+        if result == 0:
+            print("Thank you!")
+            quit()
+        elif result != 9:
+            print("The result is: ", result)
+
+if __name__ == "__main__":
+    main()
