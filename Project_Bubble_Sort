@@ -1,0 +1,13 @@
+def bubble_sort(l):
+    for i in range(len(l)-1):
+        if l[i] <= l[i+1]:
+            return l
+            pass
+        return sorted(l)
+a = []
+number = int(input("Please Enter the Total Number of Elements : "))
+
+for i in range(number):
+    value = int(input("Please enter the %d Element : " %i))
+    a.append(value)
+print("The Sorted List in Ascending Order : ", bubble_sort(a))
