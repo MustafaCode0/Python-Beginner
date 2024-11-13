@@ -1,0 +1,11 @@
+fileName = input("Give a file name: ")
+fileContent = input("Write something: ")
+
+# making new, ("w" stands for write)  file by the name of user given string(fileName)
+newFile = open(fileName, "w")
+
+# adding/writing what was given by the user to the file
+newFile.write(fileContent)
+
+newFile.close()
+print("Wrote", fileContent, "to the file", fileName)
