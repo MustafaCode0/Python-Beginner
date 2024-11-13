@@ -1,0 +1,10 @@
+# asking for input
+num = input ("Give a number: ")
+num = int(num)
+
+# dividing it
+num = num / 2
+
+# checking if the result is integer which will then mean it's even number
+if num.is_integer():
+    print("The given number was even.")
