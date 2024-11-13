@@ -1,0 +1,13 @@
+# It works but not correctly nor recommended! 
+
+first = 10.6411
+second = "Stringline!"
+
+# converting round/float numbers to integer
+first = int(first)
+
+# multiplying str by 2
+multi_str = second * 2
+
+print("Integer conversion cannot do roundings:" , first)
+print("Multiplying strings also causes trouble:" , multi_str)
