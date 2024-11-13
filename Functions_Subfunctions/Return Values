@@ -1,0 +1,22 @@
+def tester(givenstring = "Too short"):
+
+    while True:
+        usr_input = input("Write something (quit ends): ")
+
+        if len(usr_input) > 10 and "X" in usr_input:
+            print(usr_input)
+            return True
+        elif len(usr_input) > 10:
+            print(usr_input)
+        elif usr_input == "quit":
+            quit()
+        else:
+            print(givenstring)
+
+def main():
+    tester()
+    print("X spotted!")
+    tester()
+
+if __name__ == "__main__":
+    main()
