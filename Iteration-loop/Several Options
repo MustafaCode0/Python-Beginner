@@ -1,0 +1,34 @@
+#ohjelman aloitus
+print("Calculator")
+cal = 0
+
+#otetaan numerot käyttäjältä
+firNum = int(input("Give the first number: "))
+secNum = int(input("Give the second number: "))
+
+while True:
+
+    #näytetään käyttäjälle vaihtoehdot ja otetaan käyttäjän valinta
+    print("(1) +\n","(2) -\n","(3) *\n","(4) /\n","(5) Change numbers\n","(6) Quit\n", sep="")
+    print("Current numbers: " , firNum , secNum)
+    selection = input("Please select something (1-6): ")
+
+    #tarkistetaan mitä käyttäjä valinnut ja toimitaan sen mukaan
+    if selection == "1":
+        cal = firNum + secNum
+        print("The result is: ", cal)
+    elif selection == "2":
+        cal = firNum - secNum
+        print("The result is: ", cal)
+    elif selection == "3":
+        cal = firNum * secNum
+        print("The result is: ", cal)
+    elif selection == "4":
+        cal = firNum / secNum
+        print("The result is: ", cal)
+    elif selection == "5":
+        firNum = int(input("Give the first number: "))
+        secNum = int(input("Give the second number: "))
+    elif selection == "6":
+        print("Thank you!")
+        break
