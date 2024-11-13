@@ -1,0 +1,17 @@
+def main():
+
+    file = open("words.txt", "r")
+    context = file.read().split()
+
+    list = []
+
+    for i in context:
+        list.append(i)
+        list.sort()
+
+    print("Words in an alphabetical order:")
+    for i in list:
+        print(i)
+
+if __name__ == "__main__":
+    main()
